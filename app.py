@@ -19,8 +19,8 @@ dz = df.groupby(["Account"])["Amount"].agg("sum").reset_index()
 
 fig3 = px.bar(df,x = "Account",y = "Amount",title = "Account sum expenses")
 
-app = dash.Dash()
-
+app = dash.Dash(__name__)
+server = app.server
 
 app.layout = html.Div(children = [
     
